@@ -6,15 +6,13 @@ using namespace std;
 int fibo(int number)
 {
 	if (number == 0) {
-		cout << "0 ";
 		return 0;
 	}
 	else if (number == 1) {
-		cout << "1 ";
 		return 0;
 	}
 	else {
-		cout << fibo(number - 1) + fibo(number - 2) << " ";
+		cout << number << " ";
 		return fibo(number - 1) + fibo(number - 2);
 	}
 }
