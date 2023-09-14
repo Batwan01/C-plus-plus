@@ -27,5 +27,11 @@
     <ClCompile Include="p118-13.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="P118-131.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="sad.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
