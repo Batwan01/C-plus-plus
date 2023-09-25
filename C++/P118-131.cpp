@@ -20,5 +20,6 @@ int main() {
 	cout << "몇 항까지 구할까요: ";
 	cin >> num; //반복 횟수 입력받기
 	fibonacci(num);
+	system("pause");
 	return 0;
 }
