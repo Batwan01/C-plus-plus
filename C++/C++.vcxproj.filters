@@ -48,5 +48,11 @@
     <ClCompile Include="P210-2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="P211.3.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="P211-4.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
