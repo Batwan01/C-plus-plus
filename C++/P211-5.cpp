@@ -21,5 +21,7 @@ int main() {
 	cout << "주사위 값=" << obj.roll() << endl;
 
 	cout << "주사위 값=" << obj.roll() << endl;
+	system("pause");
+
 	return 0;
 }
