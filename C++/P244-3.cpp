@@ -26,4 +26,6 @@ int main() {
 	BankAccount bank;
 	bank.deposit(10000);
 	bank.withdraw(5000);
+	system("pause");
+	return 0;
 }
