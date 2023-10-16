@@ -28,5 +28,6 @@ int main() {
 	Point b{ 100,200 };
 	b.print();
 
-
+	system("pause");
+	return 0;
 }

@@ -1,27 +1,21 @@
 #include <iostream>
 using namespace std;
-class Time {
+
+class Person {
+private:
+	string name;
+	int snumber;
+	int age;
+
 public:
-    int hour;
-    int minute;
-
-    Time(int h = 0, int m = 0);
-
-    void print()
-    {
-        cout << hour << ":" << minute << endl;
-    }
+	Person();
+	Person(string name, int snumber, int age) : name{name}, snumber{snumber}, age{age} {}
+	~Person();
 };
-Time::Time(int h, int m)
-{
-    hour = h;
-    minute = m;
-}
-int main()
-{
-    Time a;
-    Time b{ 10,25 };
-    a.print();
-    b.print();
-    return 0;
+
+int main() {
+	
+
+	system("pause");
+	return 0;
 }
