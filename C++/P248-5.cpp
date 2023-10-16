@@ -32,5 +32,6 @@ int main() {
 	B.print();
 	add(A, B);
 
-
+	system("pause");
+	return 0;
 }
