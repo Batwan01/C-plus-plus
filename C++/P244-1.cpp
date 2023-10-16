@@ -7,6 +7,7 @@ public:
 public:
 	Point(int x, int y);
 	~Point();
+	void print();
 };
 
 Point::Point(int x1=0, int y2=0) :x{ x1 }, y{ y2 } 
@@ -16,12 +17,16 @@ Point::~Point() {
 
 }
 
+void Point::print() {
+	cout << x << endl;
+	cout << y << endl;
+}
+
 int main() {
 	Point a;
-	cout << a.x;
-	Point b{ 10,20 };
-	cout << b.x;
-
+	a.print();
+	Point b{ 100,200 };
+	b.print();
 
 
 }
