@@ -16,7 +16,6 @@ public:
 		if(i<0) cout << "(" << r << i << "i" << ")";
 		else cout << "(" << r << "+" << i  << "i" << ")";
 	}
-
 	int get_r() { return r; }
 	int get_i() { return i; }
 };
