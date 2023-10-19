@@ -23,6 +23,7 @@ public:
 void add(Complex A, Complex B) {
 	cout << "=(" << A.get_r() + B.get_r() << A.get_i() + B.get_i() << "i)"<< endl;
 }
+
 int main() {
 	Complex A{ 5, 3 };
 	A.print();
