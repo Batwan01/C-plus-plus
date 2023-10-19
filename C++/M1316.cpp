@@ -4,11 +4,11 @@ using namespace std;
 int main() {
 	int N;
 	cin >> N;
-	string word;
+	string word[100];
 
 	for (int i = 0; i < N; i++) {
-		cin >> word;
-		cout << word[2];
+		cin >> word[i];
+		cout << word[i];
 	}
 
 }
