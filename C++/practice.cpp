@@ -12,6 +12,8 @@ int main() {
 		i++;
 	}*/
 
-	string travel { "i came to the jeju"}
-
+	int a, b, c;
+	if (a == b == c)
+		
+		printf("");
 }
