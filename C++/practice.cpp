@@ -11,7 +11,6 @@ int main() {
 		printf("%d", i);
 		i++;
 	}*/
-
 	int a, b, c;
 	if (a == b == c)
 		
