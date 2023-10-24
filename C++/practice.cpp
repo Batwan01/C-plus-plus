@@ -1,18 +1,9 @@
 #include <iostream>
+#include <vector>
 using namespace std;
-
+void func(int x , int y=100) {
+	cout << x << y;
+}
 int main() {
-	/*int i = 0;
-	for (;; ) {
-		if (i > 10)
-			break;
-		if (i < 6)
-			continue;
-		printf("%d", i);
-		i++;
-	}*/
-	int a, b, c;
-	if (a == b == c)
-		
-		printf("");
+	func(10);
 }
