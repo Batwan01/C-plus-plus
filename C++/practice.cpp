@@ -1,9 +1,12 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-void func(int x , int y=100) {
-	cout << x << y;
-}
+
+
+
 int main() {
-	func(10);
+	string s1 = "hello";
+	string s2 = "world";
+	bool b = (s1 == s2);
+	cout << b;
 }
