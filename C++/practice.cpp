@@ -2,11 +2,14 @@
 #include <vector>
 using namespace std;
 
+class Test {
+	int x;
+public:
+	Test() { x = 0; cout << x << " "; }
+	Test(int x): x{x} {}
+};
 
 
 int main() {
-	string s1 = "hello";
-	string s2 = "world";
-	bool b = (s1 == s2);
-	cout << b;
+	Test a[2];
 }
