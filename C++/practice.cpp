@@ -9,7 +9,6 @@ public:
 	Test(int x): x{x} {}
 };
 
-
 int main() {
 	Test a[2];
 }
