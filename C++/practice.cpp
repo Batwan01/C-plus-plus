@@ -7,7 +7,8 @@ class Test {
 public:
 	Test() { x = 0; cout << x << " "; }
 	Test(int x): x{x} {}
-};
+}; 
+
 int main() {
 	Test a[2];
 }
