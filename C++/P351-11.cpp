@@ -22,13 +22,19 @@ double Rect::getArea() {
 	return x * y / 2;
 }
 
+void Rect::print() {
+	cout << getArea() << endl;
+	cout << getPerimeter();
+}
+
 int Rect::getPerimeter() {
 	const int x = this->height;
 	const int y = this->width;
 	return (x * 2) + (y * 2);
 }
 int main() {
-	Rect* p = new Rect(30, 40);
+	Rect* p = new Rect(3, 4);
+	(*p).print();
 	return 0;
 
 }
