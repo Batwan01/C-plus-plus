@@ -2,8 +2,14 @@
 #include <vector>
 using namespace std;
 
+void up(Pizza& p) {
 
+}
 int main() {
+	Pizza obj(10);
+	up(obj);
+
+
 	const int* p1;
 	int* const p2=0;
 	const int* const p3=0;
