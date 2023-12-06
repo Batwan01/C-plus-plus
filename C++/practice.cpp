@@ -3,7 +3,6 @@
 using namespace std;
 
 void up(Pizza& p) {
-
 }
 int main() {
 	Pizza obj(10);
