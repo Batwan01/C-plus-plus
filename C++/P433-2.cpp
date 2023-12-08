@@ -33,9 +33,8 @@ Box Box::operator+(const Box& a) {
 }
 
 int main() {
-	Box a(10, 10, 80), b(20, 20, 20);
+	Box a(10, 10, 10), b(20, 20, 20);
 	a.print(); b.print();
 
 	cout << (a == b);
-
 }
