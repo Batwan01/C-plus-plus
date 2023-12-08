@@ -28,4 +28,8 @@ int main() {
 	bank.withdraw(5000);
 	system("pause");
 	return 0;
+	BankAccount bank2;
+	BankAccount *p = new BankAccount[10]{ bank, bank2, BankAccount(2,3)};
+
+	BankAccount p[10]{ BankAccount(2,3)};
 }
