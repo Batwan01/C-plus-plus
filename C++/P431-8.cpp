@@ -10,7 +10,7 @@ private:
 public:
 	Complex(double r = 0, double i = 0) : real(r), imag(i) {}
 	//Complex(double r=0, double i=0) : real(r/2), imag(i) {} 5¹ø
-	friend Complex operator+(Complex& a, Complex& b) {return Complex(a.real + b.real, a.imag + b.imag);}; //7¹ø
+	friend Complex operator+(Complex& a, Complex& b); //7¹ø
 	//Complex operator+(const Complex& v1);
 	Complex operator-(const Complex& v1);
 	Complex operator+=(const Complex& v1);
@@ -30,6 +30,11 @@ istream& operator>>(istream& in, Complex& v) {
 	in >> v.real >> v.imag;
 	return in;
 }
+
+Complex operator+(Complex& a, Complex& b) {
+	return Complex(a.real + b.real, a.imag + b.imag); 
+}
+
 Complex::operator double() const {
 	return sqrt(real * real + imag * imag);
 }
