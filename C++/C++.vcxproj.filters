@@ -132,5 +132,11 @@
     <ClCompile Include="P394-4.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="P422.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="P431-8.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
