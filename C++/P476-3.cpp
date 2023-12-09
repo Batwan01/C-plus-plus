@@ -20,7 +20,7 @@ class Manager :public Employee {
 	int bonus;
 public:
 	Manager(string name, int salary, int bonus): Employee(name, salary), bonus{bonus} {}
-
+	x
 	void setbonus(int bonus) { this->bonus = bonus; }
 
 	void computeSalary() {
