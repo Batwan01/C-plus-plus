@@ -40,10 +40,11 @@ public:
 };
 
 int main() {
-	Shape* rect = new Rect(10,20, 10, 20);
-	Shape* circle = new Circle(10,30, 15);
-	Shape* triangle = new Triangle(10,40, 10, 40);
-	rect->print();
-	circle->print();
-	triangle->print();
+	Shape* shape[3];
+	shape[0] = new Circle(0, 0, 5);
+	shape[1] = new Triangle(0, 0, 5, 4);
+	shape[2] = new Rect(0, 0, 6, 8);
+
+	for (int i = 0; i < 3; i++)
+		shape[i]->print();
 }
