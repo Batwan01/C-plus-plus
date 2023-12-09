@@ -1,50 +1,32 @@
 #include <iostream>
 using namespace std;
-class Shape {
-    int x, y;
+
+class HomeApplicance {
+	int price;
+	virtual double getPrice() = 0;
 public:
-    virtual double getArea() = 0;
-    Shape(int x, int y) :x(x), y(y)
-    { }
-    Shape()
-    { }
-    int getX() { return x; }
-    int getY() { return y; }
+	HomeApplicance(int price):price{price} {}
 };
 
-class Rect : public Shape {
+class Television :public HomeApplicance {
+	int Tv_price;
 public:
-    Rect(int x, int y) : Shape(x, y)
-    { }
-    virtual double getArea() {
-        return Shape::getX() * Shape::getY();
-    }
+	Television(int price) :HomeApplicance(price), Tv_price{ price } {}
+	double getPrice() { return Tv_price*0.9; }
 };
 
-class Circle : public Shape {
+class Refrigerator :public HomeApplicance {
+	int Re_price;
 public:
-    Circle(int x) : Shape(x, x)
-    { }
-    virtual double getArea() {
-        return Shape::getX() * Shape::getX() * 3.14;
-    }
+	Refrigerator(int price): HomeApplicance(price), Re_price{price} {}
+	double getPrice() { return Re_price*0.95; }
 };
 
-class Triangle : public Shape {
-public:
-    Triangle(int x, int y) : Shape(x, y)
-    { }
-    virtual double getArea() {
-        return Shape::getX() * Shape::getY() / 2;
-    }
-};
-int main(void) {
-    Shape** pp = new Shape * [3];
-    pp[0] = new Rect(4, 5);
-    cout << "도형 #0의 면적 : " << pp[0]->getArea() << endl;
-    pp[1] = new Circle(4);
-    cout << "도형 #1의 면적 : " << pp[1]->getArea() << endl;
-    pp[2] = new Triangle(3, 4);
-    cout << "도형 #2의 면적 : " << pp[2]->getArea() << endl;
-    return 0;
+int main() {
+	Television *t = new Television(100000);
+	Refrigerator* r = new Refrigerator(200000);
+	Television* t1 = new Television(360000);
+	cout << t->getPrice() << endl;
+	cout << r->getPrice() << endl;
+	cout << t1->getPrice();
 }
