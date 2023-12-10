@@ -2,27 +2,33 @@
 #include <vector>
 #include <string>
 using namespace std;
-class Human {
-	string name;
-	int age;
-public:
-	Human(string name, int age):name(name), age(age) {}
-	void setname(string name) { this->name = name; }
-	void srtage(int age) { this->age = age; }
-	string getname() { return name; }
-	int getage() { return age; }
-};
 
-class Student :public Human {
-	string major;
+class Employee {
+	string name;
+	int salary;
 public:
-	Student(string name, int age, string major): Human(name, age), major(major) {}
-	void print() {
-		cout << "ÀÌ¸§ : " << getname() << endl << "³ªÀÌ : " << getage() << endl << "Àü°ø : " << major << endl << endl;
+	Employee(string name, int salary):name(name), salary(salary) {}
+	void setname(string name) { this->name = name; }
+	void setsalary(int salary) { this->salary = salary; }
+	string getname() { return name; }
+	int getsalary() { return salary; }
+	int computeSalary() {
+		return salary;
 	}
 };
+
+class Manager :public Employee {
+	int bonus;
+public:
+	Manager(string name, int salary, int bonus):Employee(name, salary), bonus(bonus) {}
+	void setbonus(int bonus) { this->bonus = bonus; }
+	int getbonus() { return bonus; }
+	int computeSalary() {
+		return getsalary() + bonus;
+	}
+};
+
 int main() {
-	Student  *h = new Student[3]{ Student("ÃáÇâ", 18,"ÄÄ°ø") , Student("¸ù·æ",21, "°£È£"), Student("»ç¶Ç", 50, "À¯±³")};
-	for (int i = 0; i < 3; i++)
-		h[i].print();
+	Manager m1("±èÃ¶¼ö", 200, 100);
+	cout << "ÀüÃ¼ ¿ù±Ş: " << m1.computeSalary();
 }
