@@ -5,7 +5,7 @@ using namespace std;
 class Student {
 	string name;
 public:
-	Student(string name =""):name{name} {}
+	Student(string name = "") :name{ name } {}
 	string getName() { return name; }
 	void setName(string name) { this->name = name; }
 };
@@ -19,7 +19,7 @@ public:
 	MyClass(Student* st, string name, int s) { p = st; className = name; size = s; }
 	void print() {
 		for (int i = 0; i < size; i++) {
-			cout << i+1 << " : " << p[i].getName() << endl;
+			cout << i + 1 << " : " << p[i].getName() << endl;
 		}
 	}
 };
