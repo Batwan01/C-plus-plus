@@ -127,8 +127,7 @@ int main() {
 	swap(p1, p2);
 	p1.print(); p2.print();
 }*/
-
-class Box {
+/*class Box {
 private:
 	double length;
 	double width;
@@ -152,4 +151,92 @@ int Box::count = 0;
 int main() {
 	Box(5, 5, 5);
 	cout << Box(5, 5, 5).getCount();
+}*/
+
+class Complex {
+private:
+	double real, imag;
+public:
+	Complex(double r=0, double i=0):real(r), imag(i) {}
+	
+	Complex operator+(const Complex &p) {
+		Complex n;
+		n.real = this->real + p.real;
+		n.imag = this->imag + p.imag;
+		return n;
+	}
+	Complex operator-(const Complex& p);
+	
+	void clear() { real = 0; imag = 0; }
+	void print() { cout << "real : " << real << endl << "imag : " << imag << endl; }
+	string printi() { return "(" + to_string((int)real) + "+" + to_string((int)imag) + "i)"; }
+
+	Complex& operator+=(const Complex& p) {
+		this->real += p.real;
+		this->imag += p.imag;
+		return *this;
+	}
+	Complex operator-=(const Complex& p);
+	operator double();
+	friend istream& operator>>(istream &in, Complex& p) {
+		in >> p.real >> p.imag;
+		return in;
+	}
+
+	friend ostream& operator<<(ostream& os, Complex& p);
+	bool operator==(const Complex& p);
+	bool operator!=(const Complex& p) { return !(*this != p); }
+};
+
+bool Complex::operator==(const Complex& p) {
+	return (this->real == p.real && this->imag == p.imag);
+}
+ostream& operator<<(ostream& os, Complex& p) {
+	os << "real : " << p.real << endl << "imag : " << p.imag << endl;
+	return os;
+}
+/*Complex operator-(const Complex& p) {
+	friend
+}*/
+
+Complex::operator double() {
+	return 0;
+}
+
+Complex Complex::operator-=(const Complex& p) {
+	this->real -= p.real;
+	this->imag -= p.imag;
+	return *this;
+}
+
+Complex Complex::operator-(const Complex& p) {
+	Complex n;
+	n.real = this->real - p.real;
+	n.imag = this->imag - p.imag;
+	return n;
+}
+
+
+int main() {
+	Complex a(1.0, 7.0), b(3.0, 8.0);
+	cout << "¿ø·¡ °ª" << endl << "a-------------" << endl;
+	a.print();
+	cout << "b-------------" << endl;
+	b.print();
+	Complex c = a + b;
+	cout << "-------------" << endl << a.printi() << "+" << b.printi() << "=" << c.printi() << endl;
+	c.clear();
+	c = a.operator+(b);
+	c.print();
+	a += b;
+	a.print();
+	a -= b;
+	a.print();
+	cin >> a >> b;
+	cout << "a-------------" << endl << a << "b-------------" << endl <<  b << "-------------" << endl;
+	if (a == b)
+		cout << "True";
+	else
+		cout << "False";
+
 }
