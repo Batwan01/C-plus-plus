@@ -152,8 +152,7 @@ int main() {
 	Box(5, 5, 5);
 	cout << Box(5, 5, 5).getCount();
 }*/
-
-class Complex {
+/*class Complex {
 private:
 	double real, imag;
 public:
@@ -195,9 +194,9 @@ ostream& operator<<(ostream& os, Complex& p) {
 	os << "real : " << p.real << endl << "imag : " << p.imag << endl;
 	return os;
 }
-/*Complex operator-(const Complex& p) {
+Complex operator-(const Complex& p) {
 	friend
-}*/
+}
 
 Complex::operator double() {
 	return 0;
@@ -239,4 +238,40 @@ int main() {
 	else
 		cout << "False";
 
+}*/
+class Box {
+private:
+	double length;
+	double width;
+	double height;
+	static int count;
+	int num;
+public:
+	Box(int l = 0, int w = 0, int h = 0) :length(l), width(w), height(h) { count++; num = count; }
+	double getVolume(void) { return length * width * height; }
+
+	Box operator+(const Box& p) {
+		Box n;
+		n.length = this->length + p.length;
+		n.width = this->width + p.width;
+		n.height = this->height + p.height;
+		return n;
+	}
+	void print();
+};
+
+void Box::print() {
+	cout << "상자 #" << num << endl;
+	cout << "상자의 길이: " << length << endl;
+	cout << "상자의 너비: " << width << endl;
+	cout << "상자의 높이: " << height << endl;
+	cout << "상자의 부피: " << getVolume() << endl << endl;
+
+}
+int Box::count = 0;
+
+int main() {
+	Box a(10, 10, 10), b(20, 20, 20), c;
+	c = a + b;
+	a.print(); b.print(); c.print();
 }
