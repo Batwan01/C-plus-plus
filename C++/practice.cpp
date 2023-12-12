@@ -63,8 +63,7 @@ int main() {
 
 	cout << name->studentname(0) << endl << name->studentname(1) << endl << name->studentname(2);
 }*/
-
-class Line {
+/*class Line {
 public:
 	int getLength(void);
 	Line(int len);
@@ -99,4 +98,33 @@ int main() {
 	Line l1(l);
 
 	cout << l.getLength() << endl << l1.getLength();
+}*/
+
+class Point {
+private:
+	double xval, yval;
+public:
+	Point(double x = 0.0, double y = 0.0) :xval(x), yval(y) {}
+	double getX() { return xval; }
+	double getY() { return yval; }
+	void setX(double x) { xval = x; }
+	void setY(double y) { yval = y; }
+	void print() { cout << xval << "," << yval << endl; }
+};
+
+void swap(Point& p1, Point& p2) {
+	double x = p1.getX(), y = p1.getY();
+
+	p1.setX(p2.getX());
+	p1.setY(p2.getY());
+
+	p2.setX(x);
+	p2.setY(y);
+}
+
+int main() {
+	Point p1(1.2, -2.8), p2(3, 6);
+	p1.print(); p2.print();
+	swap(p1, p2);
+	p1.print(); p2.print();
 }
