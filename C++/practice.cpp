@@ -37,8 +37,7 @@ int main() {
 	for (int i = 0; i < n; i++)
 		cout << p[i];
 }*/
-
-class Student {
+/*class Student {
 	string name;
 public:
 	Student(string name = "") : name(name) {}
@@ -63,4 +62,41 @@ int main() {
 	name->setStudent(student);
 
 	cout << name->studentname(0) << endl << name->studentname(1) << endl << name->studentname(2);
+}*/
+
+class Line {
+public:
+	int getLength(void);
+	Line(int len);
+	Line(Line& a);
+	~Line() {
+		cout << "家戈磊 积己" << endl;
+	}
+private:
+	int* ptr;
+};
+
+Line::Line(int len) { 
+	cout << "老馆 积己磊" << endl;
+	ptr = new int;
+	*ptr = len; 
+}
+
+Line::Line(Line& a) {
+	cout << "汗荤 积己磊" << endl;
+
+	ptr = new int;
+	*ptr = a.getLength();
+}
+
+int Line::getLength() {
+	return *ptr;
+}
+
+
+int main() {
+	Line l(10);
+	Line l1(l);
+
+	cout << l.getLength() << endl << l1.getLength();
 }
