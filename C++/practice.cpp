@@ -2,8 +2,7 @@
 #include <vector>
 #include <string>
 using namespace std;
-
-class Rect {
+/*class Rect {
 	int width, height;
 public:
 	int getArea() { return width * height; }
@@ -26,4 +25,42 @@ int main() {
 	r2.setwidth(4);
 	cout << r1.getArea() << endl << r1.getPerimeter() << is_equal(r1,r2);
 
+}*/
+/*int main() {
+	int n;
+	cin >> n;
+	int* p = new int[n];
+
+	for (int i = 0; i < n; i++)
+		cin >> p[i];
+
+	for (int i = 0; i < n; i++)
+		cout << p[i];
+}*/
+
+class Student {
+	string name;
+public:
+	Student(string name = "") : name(name) {}
+	string getname() { return name; }
+	void setName(string name) { this->name = name; }
+};
+
+class MyClass {
+	string className;
+	Student* p;
+	int size;
+public:
+	void setStudent(Student* s) { p = s; }
+	MyClass(string name) : className(name) {}
+	string studentname(int i) {	return p[i].getname();	}
+};
+
+int main() {
+	Student* student = new Student[3]{Student("jiwan"), Student("jiho"), Student("jiwoo")};
+
+	MyClass *name= new MyClass("special");
+	name->setStudent(student);
+
+	cout << name->studentname(0) << endl << name->studentname(1) << endl << name->studentname(2);
 }
