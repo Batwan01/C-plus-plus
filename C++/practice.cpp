@@ -99,8 +99,7 @@ int main() {
 
 	cout << l.getLength() << endl << l1.getLength();
 }*/
-
-class Point {
+/*class Point {
 private:
 	double xval, yval;
 public:
@@ -127,4 +126,30 @@ int main() {
 	p1.print(); p2.print();
 	swap(p1, p2);
 	p1.print(); p2.print();
+}*/
+
+class Box {
+private:
+	double length;
+	double width;
+	double height;
+	static int count;
+public:
+	Box(double l = 2.0, double w = 2.0, double h = 2.0) {
+		count++;
+		length = l;
+		width = w;
+		height = h;
+	}
+	double Volume() {
+		return length * width * height;
+	}
+	int getCount() { return count; }
+};
+
+int Box::count = 0;
+
+int main() {
+	Box(5, 5, 5);
+	cout << Box(5, 5, 5).getCount();
 }
