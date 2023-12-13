@@ -258,7 +258,16 @@ public:
 		return n;
 	}
 	void print();
+
+	bool operator==(const Box& p) {
+		return (this->length == p.length && this->width == width && this->height == p.height);
+	}
+	bool operator<(const Box& p);
 };
+
+bool Box::operator<(const Box& p) {
+	return this->getVolume() < (p.length * p.height * p.width);
+}
 
 void Box::print() {
 	cout << "상자 #" << num << endl;
@@ -266,12 +275,21 @@ void Box::print() {
 	cout << "상자의 너비: " << width << endl;
 	cout << "상자의 높이: " << height << endl;
 	cout << "상자의 부피: " << getVolume() << endl << endl;
-
 }
+
 int Box::count = 0;
 
 int main() {
-	Box a(10, 10, 10), b(20, 20, 20), c;
+	Box a(10, 10, 10), b(20, 20, 20), c, d(10, 10, 10);
 	c = a + b;
 	a.print(); b.print(); c.print();
+	if (a == d)
+		cout << "True";
+	else
+		cout << "False";
+
+	if (a < b)
+		cout << "True";
+	else
+		cout << "False";
 }
