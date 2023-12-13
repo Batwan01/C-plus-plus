@@ -363,7 +363,7 @@ int main() {
 	m.print();
 }*/
 //P477-5
-class Shape {
+/*class Shape {
 	int x, y;
 	string color;
 	double getArea();
@@ -381,4 +381,84 @@ public:
 int main() {
 	Circle c(0, 0, 35);
 	cout << c.getArea();
+}*/
+//P514-1
+/*class Shape {
+	int x, y;
+	virtual double getArea() = 0;
+public:
+	Shape(int x, int y):x(x), y(y) {}
+	void print() { cout << getArea() << endl; }
+};
+
+class Rect:public Shape {
+	int length, height;
+public:
+	Rect(int x, int y, int length, int height):Shape(x,y), length(length), height(height) {}
+	double getArea() { return length * height; }
+	void print() { cout << this->getArea() << endl; }
+};
+
+class Circle :public Shape {
+	int radius;
+public:
+	Circle(int x, int y, int radius) :Shape(x, y), radius(radius) {}
+	double getArea() { return radius * radius * 3.14; }
+	void print() { cout << this->getArea() << endl; }
+};
+
+class Triangle :public Shape {
+	int length, height;
+public:
+	Triangle(int x, int y, int length, int height) :Shape(x, y), length(length), height(height) {}
+	double getArea() { return length * height / 2; }
+	void print() { cout << this->getArea() << endl; }
+};
+
+int main() {
+	Shape* shape[3];
+	shape[0] = new Rect(0, 0, 5, 4);
+	shape[1] = new Circle(0, 0, 5);
+	shape[2] = new Triangle(0, 0, 6, 5);
+	
+	for (int i = 0; i < 3; i++) {
+		shape[i]->print();
+	}
+
+}*/
+//P514-3
+class HomeAppliance {
+	int price;
+	virtual double getPrice() = 0;
+public:
+	HomeAppliance(int price):price(price) {}
+	int get_price() { return price; }
+	virtual void print() = 0;
+};
+
+class Television:public HomeAppliance {
+public:
+	Television(int price): HomeAppliance(price) {}
+	double getPrice() { return get_price() * 0.9; }
+	void print() { cout << "Tv : " << getPrice() << endl; }
+};
+
+class Refrigerator:public HomeAppliance {
+public:
+	Refrigerator(int price) : HomeAppliance(price) {}
+	double getPrice() { return get_price() * 0.95; }
+	void print() { cout << "Refi : " << getPrice() << endl; }
+};
+
+int main() {
+	HomeAppliance* home[4];
+	home[0] = new Television(1000000);
+	home[1] = new Refrigerator(1000000);
+	home[2] = new Television(200000);
+	home[3] = new Refrigerator(20000);
+
+	for (int i = 0; i < 4; i++) {
+		home[i]->print();
+	}
+
 }
