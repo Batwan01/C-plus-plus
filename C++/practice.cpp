@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 using namespace std;
+//P351-11
 /*class Rect {
 	int width, height;
 public:
@@ -26,6 +27,7 @@ int main() {
 	cout << r1.getArea() << endl << r1.getPerimeter() << is_equal(r1,r2);
 
 }*/
+//P353-1
 /*int main() {
 	int n;
 	cin >> n;
@@ -37,6 +39,7 @@ int main() {
 	for (int i = 0; i < n; i++)
 		cout << p[i];
 }*/
+//P354-5
 /*class Student {
 	string name;
 public:
@@ -63,6 +66,7 @@ int main() {
 
 	cout << name->studentname(0) << endl << name->studentname(1) << endl << name->studentname(2);
 }*/
+//P393-2
 /*class Line {
 public:
 	int getLength(void);
@@ -99,6 +103,7 @@ int main() {
 
 	cout << l.getLength() << endl << l1.getLength();
 }*/
+//P394-4
 /*class Point {
 private:
 	double xval, yval;
@@ -127,6 +132,7 @@ int main() {
 	swap(p1, p2);
 	p1.print(); p2.print();
 }*/
+//P395-5
 /*class Box {
 private:
 	double length;
@@ -152,6 +158,7 @@ int main() {
 	Box(5, 5, 5);
 	cout << Box(5, 5, 5).getCount();
 }*/
+//P431-8
 /*class Complex {
 private:
 	double real, imag;
@@ -239,7 +246,8 @@ int main() {
 		cout << "False";
 
 }*/
-class Box {
+//P433-1
+/*class Box {
 private:
 	double length;
 	double width;
@@ -263,6 +271,7 @@ public:
 		return (this->length == p.length && this->width == width && this->height == p.height);
 	}
 	bool operator<(const Box& p);
+
 };
 
 bool Box::operator<(const Box& p) {
@@ -292,4 +301,63 @@ int main() {
 		cout << "True";
 	else
 		cout << "False";
+
+}*/
+//P473-8
+/*class Human {
+	string name;
+	int age;
+public:
+	Human(string name, int age):name(name), age(age) {}
+	string getname() { return name; }
+	int getage() { return age; }
+	void setname(string name) { this->name = name; }
+	void setage(int age) { this->age = age; }
+	void print() { cout << "name : " << name << endl << "age : " << age << endl; }
+
+};
+
+class Student : public Human {
+	string major;
+public:
+	Student(string name, int age, string major): Human(name, age), major(major) {}
+	void print() {
+		cout << "name : " << getname() << endl << "age : " << getage() << endl << "Àü°ø : " << major << endl;
+	}
+};
+int main() {
+	Human* human = new Human[3]{ Human("ÃáÇâ",18), Human("¸ù·æ", 21), Human("»ç¶Ç", 50) };
+	Human* hu[3];
+	hu[0] = new Human("Çï·Î", 12);
+	hu[1] = new Human("ÇÏÀÌ", 23);
+	hu[2] = new Human("°ï´Ï", 23);
+	for (int i = 0; i < 3; i++)
+		human[i].print();
+
+	for (int i = 0; i < 3; i++)
+		hu[i]->print();
+
+	Student st("È÷", 2, "ÄÄ°ø");
+	st.print();
+}*/
+class Employee {
+protected:
+	string name;
+	int salary;
+public:
+	Employee(string name, int salary) :name(name), salary(salary) { cout << "Sad"; }
+	int computSalarys() { return salary; }
+};
+
+class Manager : public Employee {
+	int bonus;
+public:
+	Manager(string name, int salary, int bonus) : Employee(name, salary), bonus(bonus) { cout << "sad"; }
+	int computSalary() { return computSalarys() + bonus; }
+	void print() { cout << "ÀÌ¸§: " << this->name << endl << "¿ù±Þ: " << this->salary << endl << "º¸³Ê½º: " << bonus << endl << "ÀüÃ¼ ±Þ¿©: " << computSalary() << endl; }
+};
+
+int main() {
+	Manager m("±èÃ¶¼ö", 200, 100);
+	m.print();
 }
