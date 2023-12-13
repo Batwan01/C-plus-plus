@@ -427,7 +427,7 @@ int main() {
 
 }*/
 //P514-3
-class HomeAppliance {
+/*class HomeAppliance {
 	int price;
 	virtual double getPrice() = 0;
 public:
@@ -461,4 +461,18 @@ int main() {
 		home[i]->print();
 	}
 
+}*/
+//P590-1
+int main() {
+	try{
+		int age;
+		cin >> age;
+		if (age > 0)
+			cout << "나이 : " << age;
+		else
+			throw age;
+	}
+	catch (int age) {
+		cout << "오류 : 양수 입력";
+	}
 }
