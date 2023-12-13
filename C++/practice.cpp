@@ -507,7 +507,7 @@ int main() {
 	return 0;
 }*/
 //P591-5
-template <typename T>
+/*template <typename T>
 T getAvergage(T list[], int n) {
 	T avg=0;
 	for (int i = 0; i < n; i++) {
@@ -520,4 +520,4 @@ int main() {
 	double list[] = { 1.2, 3.3, 9.0, 1.5, 8.7 };
 	double n = getAvergage(list, 5);
 	cout << n;
-}
+}*/
