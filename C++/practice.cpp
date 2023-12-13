@@ -340,7 +340,8 @@ int main() {
 	Student st("È÷", 2, "ÄÄ°ø");
 	st.print();
 }*/
-class Employee {
+//P476-3
+/*class Employee {
 protected:
 	string name;
 	int salary;
@@ -360,4 +361,24 @@ public:
 int main() {
 	Manager m("±èÃ¶¼ö", 200, 100);
 	m.print();
+}*/
+//P477-5
+class Shape {
+	int x, y;
+	string color;
+	double getArea();
+public:
+	Shape(int x, int y):x(x), y(y) {}
+};
+
+class Circle : public Shape {
+	int radius;
+public:
+	Circle(int x, int y, int radius):Shape(x,y),radius(radius) {}
+	double getArea() { return radius * radius * 3.14; }
+};
+
+int main() {
+	Circle c(0, 0, 35);
+	cout << c.getArea();
 }
