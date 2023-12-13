@@ -476,8 +476,8 @@ int main() {
 		cout << "오류 : 양수 입력";
 	}
 }*/
-
-int main() {
+//P590-2
+/*int main() {
 	try {
 		string word;
 		cin >> word;
@@ -489,4 +489,21 @@ int main() {
 	catch (string word) {
 		cout << "제대로 내세요";
 	}
+}*/
+//P591-4
+
+template <class T>
+T getSmallest(T arr[], int n) {
+	T min = arr[0];
+	for (int i = 0; i < n; i++) {
+		if (min > arr[i])
+			min = arr[i];
+	}
+	return min;
+}
+
+int main() {
+	double list[] = { 1.2, 3.3, 9.0, 1.5, 8.7 };
+	cout << getSmallest(list, 5);
+	return 0;
 }
