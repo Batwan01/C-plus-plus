@@ -491,8 +491,7 @@ int main() {
 	}
 }*/
 //P591-4
-
-template <class T>
+/*template <class T>
 T getSmallest(T arr[], int n) {
 	T min = arr[0];
 	for (int i = 0; i < n; i++) {
@@ -506,4 +505,19 @@ int main() {
 	double list[] = { 1.2, 3.3, 9.0, 1.5, 8.7 };
 	cout << getSmallest(list, 5);
 	return 0;
+}*/
+//P591-5
+template <typename T>
+T getAvergage(T list[], int n) {
+	T avg=0;
+	for (int i = 0; i < n; i++) {
+		avg += list[i];
+	}
+	return avg / n;
+}
+
+int main() {
+	double list[] = { 1.2, 3.3, 9.0, 1.5, 8.7 };
+	double n = getAvergage(list, 5);
+	cout << n;
 }
