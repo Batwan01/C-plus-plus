@@ -463,7 +463,7 @@ int main() {
 
 }*/
 //P590-1
-int main() {
+/*int main() {
 	try{
 		int age;
 		cin >> age;
@@ -474,5 +474,19 @@ int main() {
 	}
 	catch (int age) {
 		cout << "오류 : 양수 입력";
+	}
+}*/
+
+int main() {
+	try {
+		string word;
+		cin >> word;
+		if (word == "가위" || word == "바위" || word == "보")
+			cout << word;
+		else
+			throw word;
+	}
+	catch (string word) {
+		cout << "제대로 내세요";
 	}
 }
