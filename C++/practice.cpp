@@ -520,4 +520,4 @@ int main() {
 	double list[] = { 1.2, 3.3, 9.0, 1.5, 8.7 };
 	double n = getAvergage(list, 5);
 	cout << n;
-}*/
+}*/ 
