@@ -258,6 +258,8 @@ public:
 	Box(int l = 0, int w = 0, int h = 0) :length(l), width(w), height(h) { count++; num = count; }
 	double getVolume(void) { return length * width * height; }
 
+	//friend Box operator+(Box& p1, const Box& p2);
+
 	Box operator+(const Box& p) {
 		Box n;
 		n.length = this->length + p.length;
@@ -273,6 +275,11 @@ public:
 	bool operator<(const Box& p);
 
 };
+
+Box operator+(Box& p1, const Box& p2) {
+	Box n;
+	
+}
 
 bool Box::operator<(const Box& p) {
 	return this->getVolume() < (p.length * p.height * p.width);
@@ -383,12 +390,12 @@ int main() {
 	cout << c.getArea();
 }*/
 //P514-1
-/*class Shape {
+class Shape {
 	int x, y;
 	virtual double getArea() = 0;
 public:
 	Shape(int x, int y):x(x), y(y) {}
-	void print() { cout << getArea() << endl; }
+	virtual void print() { cout << getArea() << endl; }
 };
 
 class Rect:public Shape {
@@ -425,7 +432,7 @@ int main() {
 		shape[i]->print();
 	}
 
-}*/
+}
 //P514-3
 /*class HomeAppliance {
 	int price;
@@ -520,4 +527,4 @@ int main() {
 	double list[] = { 1.2, 3.3, 9.0, 1.5, 8.7 };
 	double n = getAvergage(list, 5);
 	cout << n;
-}*/ 
+}*/
