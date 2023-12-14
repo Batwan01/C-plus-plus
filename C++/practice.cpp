@@ -200,6 +200,7 @@ bool Complex::operator==(const Complex& p) {
 ostream& operator<<(ostream& os, Complex& p) {
 	os << "real : " << p.real << endl << "imag : " << p.imag << endl;
 	return os;
+	p.
 }
 Complex operator-(const Complex& p) {
 	friend
@@ -239,7 +240,7 @@ int main() {
 	a -= b;
 	a.print();
 	cin >> a >> b;
-	cout << "a-------------" << endl << a << "b-------------" << endl <<  b << "-------------" << endl;
+	cout << "a-------------" << endl << a << "b-------------" << endl << b << "-------------" << endl;
 	if (a == b)
 		cout << "True";
 	else
@@ -390,7 +391,7 @@ int main() {
 	cout << c.getArea();
 }*/
 //P514-1
-class Shape {
+/*class Shape {
 	int x, y;
 	virtual double getArea() = 0;
 public:
@@ -432,7 +433,7 @@ int main() {
 		shape[i]->print();
 	}
 
-}
+}*/
 //P514-3
 /*class HomeAppliance {
 	int price;
