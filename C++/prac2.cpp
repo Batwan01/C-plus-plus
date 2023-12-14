@@ -11,5 +11,5 @@ T getSmallest(T list[], int n) {
 
 int main() {
 	double list[] = { 1.2,1.3,1.4,1.5 };
-	cout << getSmallest(list, 4);
+	cout << getSmallest(list, 4); 
 }
