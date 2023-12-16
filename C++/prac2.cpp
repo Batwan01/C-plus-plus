@@ -1,16 +1,40 @@
 #include <iostream>
 using namespace std;
 
-template <class T>
-T getSmallest(T list[], int n) {
-	T small = list[0];
-	for (int i = 0; i < n; i++)
-		if (small > list[i]) small = list[i];
-	return small;
-}
+class HomeAppliance {
+	int price;
+	virtual double getPrice() = 0;
+public:
+	//HomeAppliance(int price) :price(price) {}
+	int get_price() { return price; }
+	virtual void print() = 0;
+};
 
+class Television :public HomeAppliance {
+public:
+	//Television(int price) : HomeAppliance(price) {}
+	double getPrice() { return get_price() * 0.9; }
+	void print() { cout << "Tv : " << getPrice() << endl; }
+};
+
+class Refrigerator :public HomeAppliance {
+public:
+	//Refrigerator(int price) : HomeAppliance(price) {}
+	double getPrice() { return get_price() * 0.95; }
+	void print() { cout << "Refi : " << getPrice() << endl; }
+};
 
 int main() {
-	double list[] = { 1.2,1.3,1.4,1.5 };
-	cout << getSmallest(list, 4); 
+/*	HomeAppliance* home[4];
+	home[0] = new Television(1000000);
+	home[1] = new Refrigerator(1000000);
+	home[2] = new Television(200000);
+	home[3] = new Refrigerator(20000);
+
+	for (int i = 0; i < 4; i++) {
+		home[i]->print();
+	}*/
+	HomeAppliance* p = new Television;
+
+
 }
