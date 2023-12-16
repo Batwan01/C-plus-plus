@@ -9,6 +9,7 @@ T getSmallest(T list[], int n) {
 	return small;
 }
 
+
 int main() {
 	double list[] = { 1.2,1.3,1.4,1.5 };
 	cout << getSmallest(list, 4); 
