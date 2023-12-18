@@ -35,6 +35,6 @@ int main() {
 		home[i]->print();
 	}
 	
-	HomeAppliance* nhome = new HomeAppliance[2](Television(100000), Refrigerator(52222));
+	HomeAppliance* nhome = new HomeAppliance(123);
 
 }
